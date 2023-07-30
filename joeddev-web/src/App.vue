@@ -31,6 +31,7 @@ export default {
 .container {
   display: flex;
   height: 100vh;
+  margin: 0%;
 }
 
 .left-side,
@@ -47,6 +48,8 @@ export default {
   background-color: #000000; /* Color del lado derecho */
 }
 .usr_img{
-  image-resolution: ;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 </style>
