@@ -63,8 +63,12 @@ export default {
 
   .left-side,
   .right-side {
-    flex: none; /* Desactivar flex para volver a tamaño automático */
+    flex: 1; /* Desactivar flex para volver a tamaño automático */
     width: 100%; /* Ocupar todo el ancho */
+  }
+
+  .right-side {
+    margin-bottom: 25%;
   }
 
   .left-side {
