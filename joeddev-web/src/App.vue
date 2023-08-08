@@ -4,7 +4,7 @@
       <DataUser/>
     </div>
     <div class="right-side">
-      <img class="usr_img" src="./components/img/usr_joeddev.jpg" alt="usr_img">
+      <img class="usr_img" :src="require('@/assets/img/social-logos/joeddev.jpg')" alt="usr_img">
     </div>
   </div>
 </template>

@@ -16,28 +16,12 @@
             </div>
           </div>
           <div class="social-container">
-              <div>
-                  <img @click="show_telegram_qr" class="soc-sty" src="./img/social-logos/telegram.png" alt="">
-                  <img class="soc-sty" src="./img/social-logos/twitter.png" alt="">
-                  <img class="soc-sty" src="./img/social-logos/linkedin.png" alt="">
-                  <img class="soc-sty" src="./img/social-logos/youtube.png" alt="">
-                  <img class="soc-sty" src="./img/social-logos/instagram.png" alt="">
-              </div>
+            <div>                  
+                <a v-for="data in social_data" :key="data.name" :href="data.url" target="_blank">
+                    <img class="soc-sty" :src="require('@/assets/img/social-logos/'+data.img)" :alt="data.name">
+                </a>
+            </div>
           </div>
-      </div>
-      <div>
-          <v-dialog
-            v-model="telegram"
-          >
-               <v-card>
-                    <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </v-card-text>
-                    <v-card-actions>
-                    <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
-                    </v-card-actions>
-                </v-card>
-          </v-dialog>
       </div>
   </div>
 </template>
@@ -53,17 +37,39 @@ export default {
             user_name: "Jose David",
             last_name: "Rojas Fuentes",
             user: "joeddev",
+            user_image:"joeddev.jpg",
             carrera: "Software Engineer",
             country: "GUA",
             telegram: false,
+            social_data:[
+                {
+                    name:"telegram",
+                    img:'telegram.png',
+                    url:"https://t.me/JD_Rojas"
+                },
+                {
+                    name:"twitter",
+                    img:'twitter.png',
+                    url:"https://twitter.com/JoeDDev"
+                },
+                {
+                    name:"linkedin",
+                    img:'linkedin.png',
+                    url:"https://www.linkedin.com/in/joeddev/"
+                },
+                {
+                    name:"youtube",
+                    img:'youtube.png',
+                    url:"https://www.youtube.com/channel/UC74QGzPdzHHS7p6L0pVnPPw"
+                },
+                {
+                    name:"instagram",
+                    img:'instagram.png',
+                    url:"https://www.instagram.com/joeddev/"
+                },
+            ]
         }
     },
-    methods:{
-        show_telegram_qr(){
-            console.log("muesta qr")
-            this.telegram = true
-        }
-    }
 }
 </script>
 
@@ -75,6 +81,7 @@ export default {
         display: flex;
         font-family: 'Kanit', sans-serif;
         font-weight: bold;
+        color: black;
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -91,7 +98,7 @@ export default {
         padding: 0;
     }
     .user_alias{
-        font-size: 30px;
+        font-size: 20px;
         text-align: left;
         padding-top: 12px;
         padding: 0;
