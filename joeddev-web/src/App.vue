@@ -8,7 +8,7 @@
     </div>
   </div>
 </template>
- 
+
 <script>
 import DataUser from './components/DataUser.vue'
 
@@ -28,6 +28,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
 .container {
   display: flex;
   height: 100vh;
@@ -47,9 +48,27 @@ export default {
 .right-side {
   background-color: #000000; /* Color del lado derecho */
 }
-.usr_img{
+
+.usr_img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+}
+
+/* Media query para pantallas de hasta 768px de ancho (típico para celulares) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Cambiar la dirección de los elementos */
+  }
+
+  .left-side,
+  .right-side {
+    flex: none; /* Desactivar flex para volver a tamaño automático */
+    width: 100%; /* Ocupar todo el ancho */
+  }
+
+  .left-side {
+    order: -1; /* Cambiar el orden para que right-side aparezca antes en la disposición */
+  }
 }
 </style>
